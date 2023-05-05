@@ -1,7 +1,10 @@
-import { View, Text } from 'react-native'
+import { useState, useEffect } from 'react';
+import { View, Text, ScrollView } from 'react-native'
 import { Navbar } from '../components/Navbar';
-import LottieView from 'lottie-react-native';
 import { styles } from '../theme/Webinar';
+import { dataExample2 } from '../data/data';
+import LottieView from 'lottie-react-native';
+import { WebinarCard } from '../components/WebinarCard';
 
 export const Webinar = () => {
   const [ data, setData ] = useState([]);
@@ -9,7 +12,7 @@ export const Webinar = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      /* setData( dataExample ); */
+      setData( dataExample2 );
       setLoading( false );
     }, 2000);
   }, [])
@@ -38,7 +41,7 @@ export const Webinar = () => {
                 <View style={ styles.containerEventCard }>
                   {
                     data.map(( item, index ) => {
-                      return <EventCard key={ index } data={ item } />
+                      return <WebinarCard key={ index } data={ item } />
                     })
                   }
                 </View>
