@@ -5,6 +5,7 @@ import { styles } from '../theme/Webinar';
 import { dataExample2 } from '../data/data';
 import LottieView from 'lottie-react-native';
 import { WebinarCard } from '../components/WebinarCard';
+import { StatusBar } from 'expo-status-bar';
 
 export const Webinar = () => {
   const [ data, setData ] = useState([]);
@@ -14,15 +15,16 @@ export const Webinar = () => {
     setTimeout(() => {
       setData( dataExample2 );
       setLoading( false );
-    }, 2000);
+    }, 3000);
   }, [])
 
 
   return (
     <View style={ styles.container }>
-      <Navbar />
+      <StatusBar style="auto" />
+      <Navbar link={'/'}/>
       <View style={ styles.containerHome }>
-        <Text style={ styles.title }>Eventos</Text>
+        <Text style={ styles.title }>Webinars</Text>
         {
           loading 
             ? (
