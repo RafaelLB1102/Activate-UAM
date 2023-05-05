@@ -33,9 +33,6 @@ export const dataExample = [
   },
 ]
 
-
-/* id, titulo, hora, invitados, link */
-
 export const dataExample2 = [
   {
     id: 1,
