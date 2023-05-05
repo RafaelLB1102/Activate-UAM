@@ -5,6 +5,7 @@ import { EventCard } from '../components/EventCard';
 import { useEffect, useState } from 'react';
 import { dataExample } from '../data/data';
 import LottieView from 'lottie-react-native';
+import { StatusBar } from 'expo-status-bar';
 
 export const Home = () => {
   const [ data, setData ] = useState([]);
@@ -14,12 +15,13 @@ export const Home = () => {
     setTimeout(() => {
       setData( dataExample );
       setLoading( false );
-    }, 2000);
+    }, 3000);
   }, [])
 
   return (
     <View style={ styles.container }>
-      <Navbar />
+      <StatusBar style="auto" />
+      <Navbar link={'/webinar'} />
       <View style={ styles.containerHome }>
         <Text style={ styles.title }>Eventos</Text>
         {
