@@ -32,3 +32,90 @@ export const dataExample = [
     hour: "10am - 12pm"
   },
 ]
+
+
+/* id, titulo, hora, invitados, link */
+
+export const dataExample2 = [
+  {
+    id: 1,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+  {
+    id: 2,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+  {
+    id: 3,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+  {
+    id: 4,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+  {
+    id: 5,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+  {
+    id: 6,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+  {
+    id: 7,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+  {
+    id: 8,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+  {
+    id: 9,
+    title: "Desarrollo Móvil",  
+    hour: "2pm - 4pm",
+    guests: [
+      "Yaneth Mejia"
+    ],
+    link: "https://zoom.us/j/1234567890?pwd=abc123"
+  },
+]
