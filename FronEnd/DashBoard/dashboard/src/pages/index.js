@@ -2,9 +2,6 @@ import { Inter } from 'next/font/google'
 import  Navbar  from './Components/NavBar'
 import { useSession, signIn, signOut } from "next-auth/react"
 
-
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
 
   const { data: session } = useSession()

@@ -22,7 +22,7 @@ const NavBar = () => {
 
   return (
     <Navbar className={styles.navbar} light expand="md"> {/* Aplica la clase personalizada */}
-      <NavbarBrand href="">Página principal</NavbarBrand>
+      <NavbarBrand href="../">Página principal</NavbarBrand>
       <Nav className="mr-auto" navbar>
         <NavItem>
           <Dropdown isOpen={eventosDropdownOpen} toggle={toggleEventosDropdown}>
@@ -30,9 +30,8 @@ const NavBar = () => {
               Eventos
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem href="">Creación</DropdownItem>
-              <DropdownItem href="">Edición</DropdownItem>
-              <DropdownItem href="">Visualización</DropdownItem>
+              <DropdownItem href="../createEvent">Creación</DropdownItem>
+              <DropdownItem href="../events">Visualización</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavItem>
@@ -43,7 +42,6 @@ const NavBar = () => {
             </DropdownToggle>
             <DropdownMenu>
               <DropdownItem href="">Creación</DropdownItem>
-              <DropdownItem href="">Edición</DropdownItem>
               <DropdownItem href="">Visualización</DropdownItem>
             </DropdownMenu>
           </Dropdown>

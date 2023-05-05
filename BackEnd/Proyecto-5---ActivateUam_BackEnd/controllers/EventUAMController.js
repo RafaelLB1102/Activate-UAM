@@ -12,7 +12,13 @@ const { validateEventUAM } = require("../validators/EventUAMValidator")
 "image_url" : "../src/imgs/photo1.png" */
 
 const getEventsUAM = ((req, res) => {
-    EVENTUAM_SCHEMA.find({ status: "active" })
+    EVENTUAM_SCHEMA.find({ status: "Activo" })
+        .then((data) => res.json(data))
+        .catch((err) => res.json({ message: err }))
+})
+
+const getAllEventsUAM = ((req, res) => {
+    EVENTUAM_SCHEMA.find()
         .then((data) => res.json(data))
         .catch((err) => res.json({ message: err }))
 })
@@ -31,9 +37,10 @@ const createEventUAM = (
     const VALIDATION_ERRORS = validateEventUAM(req,res)
     const LIB_ERRORS = validationResult(req);
     const ERRORS = VALIDATION_ERRORS.concat(LIB_ERRORS)
-    
-    if(ERRORS.length > 0){
-        return res.status(400).json({ errors: ERRORS.array() });
+
+    console.log(ERRORS)
+    if(ERRORS.length > 1){
+        return res.status(400).json(ERRORS);
     }
     
     const NEW_EVENT = EVENTUAM_SCHEMA(req.body);
@@ -43,7 +50,7 @@ const createEventUAM = (
 })
 
 const deleteEventUAM = ((req, res) => {
-    EVENTUAM_SCHEMA.updateOne({ _id: req.params.id }, { status: "eliminated", eliminated_at: Date.now() })
+    EVENTUAM_SCHEMA.updateOne({ _id: req.params.id }, { status: "Eliminado", eliminated_at: Date.now() })
         .then((data) => res.json(data))
         .catch((err) => res.json({ message: err }))
 })
@@ -60,6 +67,7 @@ module.exports = {
     createEventUAM,
     deleteEventUAM,
     updateEventUAM,
-    getEventsUAMbyId
+    getEventsUAMbyId,
+    getAllEventsUAM
 }
 

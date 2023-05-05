@@ -3,11 +3,13 @@ const {getEventsUAM,
     createEventUAM,
     deleteEventUAM,
     updateEventUAM,
-    getEventsUAMbyId
+    getEventsUAMbyId,
+    getAllEventsUAM
 } = require("../controllers/EventUAMController")
 const EVENT_ROUTER = EXPRESS.Router()
 const EVENTUAM_SCHEMA = require("../models/EventUAM")
 
+EVENT_ROUTER.get("/all",getAllEventsUAM);
 EVENT_ROUTER.get("/",getEventsUAM);
 EVENT_ROUTER.post("/event",createEventUAM);
 EVENT_ROUTER.get("/:id",getEventsUAMbyId)
