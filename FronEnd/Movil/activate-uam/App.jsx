@@ -24,9 +24,7 @@ export default function App () {
   return (
     <View style={ styles.container }>
       <StatusBar style="auto" />
-      {
-        loading ? <LottieView source={require('./assets/animation/9619-loading-dots-in-yellow.json')} autoPlay loop /> : <Home />
-      }
+      <Home />
     </View>
   );
 }

@@ -20,5 +20,9 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     gap: 25,
     paddingHorizontal: 10
+  },
+  loading: {
+    padding: 80,
+    height: 200
   }
 });
