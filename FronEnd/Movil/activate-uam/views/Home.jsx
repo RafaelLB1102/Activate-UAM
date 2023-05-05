@@ -18,14 +18,13 @@ export const Home = () => {
       <View style={ styles.containerHome }>
         <Text style={ styles.title }>Eventos</Text>
 
-
-
         <ScrollView
-          showsHorizontalScrollIndicator={false}
+          showsHorizontalScrollIndicator={ false }
+          showsVerticalScrollIndicator={ false }
         >
           <View style={ styles.containerEventCard }>
             {
-              data.map((item, index) => {
+              data.map(( item, index ) => {
                 return <EventCard key={ index } data={ item } />
               })
             }
