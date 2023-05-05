@@ -5,6 +5,7 @@ import { styles } from './theme/App';
 import { useFonts, FiraSans_400Regular } from '@expo-google-fonts/fira-sans';
 import LottieView from 'lottie-react-native';
 import { useEffect, useState } from 'react';
+import { Webinar } from './views/Webinar';
 
 export default function App () {
   let [fontsLoaded] = useFonts({
@@ -24,7 +25,8 @@ export default function App () {
   return (
     <View style={ styles.container }>
       <StatusBar style="auto" />
-      <Home />
+      {/* <Home /> */}
+      <Webinar />
     </View>
   );
 }
