@@ -3,9 +3,9 @@ import { View, Text, ScrollView } from 'react-native'
 import { Navbar } from '../components/Navbar';
 import { styles } from '../theme/Webinar';
 import { dataExample2 } from '../data/data';
-import LottieView from 'lottie-react-native';
 import { WebinarCard } from '../components/WebinarCard';
 import { StatusBar } from 'expo-status-bar';
+import { LoadingPage } from './LoadingPage';
 
 export const Webinar = () => {
   const [ data, setData ] = useState([]);
@@ -19,37 +19,30 @@ export const Webinar = () => {
   }, [])
 
 
+  if ( loading ) {
+    return (
+      <LoadingPage title={'Eventos'} />
+    )
+  } 
+
   return (
     <View style={ styles.container }>
       <StatusBar style="auto" />
       <Navbar link={'/'}/>
       <View style={ styles.containerHome }>
         <Text style={ styles.title }>Webinars</Text>
-        {
-          loading 
-            ? (
-              <LottieView
-                style={ styles.loading }
-                source={require('../assets/animation/9619-loading-dots-in-yellow.json')} 
-                autoPlay 
-                loop 
-              />
-            )
-            : (
-              <ScrollView
-                showsHorizontalScrollIndicator={ false }
-                showsVerticalScrollIndicator={ false }
-              >
-                <View style={ styles.containerEventCard }>
-                  {
-                    data.map(( item, index ) => {
-                      return <WebinarCard key={ index } data={ item } />
-                    })
-                  }
-                </View>
-              </ScrollView>
-            )
-        }
+          <ScrollView
+            showsHorizontalScrollIndicator={ false }
+            showsVerticalScrollIndicator={ false }
+          >
+            <View style={ styles.containerEventCard }>
+              {
+                data.map(( item, index ) => {
+                  return <WebinarCard key={ index } data={ item } />
+                })
+              }
+            </View>
+          </ScrollView>
       </View>
     </View>
   )

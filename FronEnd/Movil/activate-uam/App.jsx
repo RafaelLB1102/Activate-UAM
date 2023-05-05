@@ -12,14 +12,6 @@ export default function App () {
     FiraSans_400Regular
   });
 
-  const [ loading, setLoading ] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  })
-
   if (!fontsLoaded) return null;
 
   return (
