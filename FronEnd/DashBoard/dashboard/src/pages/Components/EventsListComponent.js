@@ -31,7 +31,7 @@ const EventsList = () => {
     try {
       await axios.delete(`http://localhost:9000/api/v1/events/${eventId}`);
       alert('Evento eliminado exitosamente');
-      // Aquí puedes actualizar la lista de eventos después de eliminar uno
+
     } catch (error) {
       console.error('Error eliminando evento:', error);
       alert('Error eliminando evento');

@@ -41,8 +41,8 @@ const NavBar = () => {
               Webinars
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem href="">Creación</DropdownItem>
-              <DropdownItem href="">Visualización</DropdownItem>
+              <DropdownItem href="../createWebinar">Creación</DropdownItem>
+              <DropdownItem href="../webminars">Visualización</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </NavItem>

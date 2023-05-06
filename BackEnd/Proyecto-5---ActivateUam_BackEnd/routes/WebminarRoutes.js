@@ -4,10 +4,12 @@ const {
     getWebminarbyId,
     createWebminar,
     deleteWebminar,
-    updateWebminar
+    updateWebminar,
+    getAllWebminarUAM
 } = require("../controllers/WebminarController")
 const WEBMINAR_ROUTER = EXPRESS.Router()
 
+WEBMINAR_ROUTER.get("/all",getAllWebminarUAM)
 WEBMINAR_ROUTER.get("/",getWebminarUAM);
 WEBMINAR_ROUTER.post("/webminar",createWebminar);
 WEBMINAR_ROUTER.get("/:id",getWebminarbyId)
