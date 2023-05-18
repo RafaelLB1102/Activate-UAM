@@ -6,11 +6,13 @@ export const styles = StyleSheet.create({
   },
   containerHome: {
     flex: 10,
-    padding: 10
+    padding: 10,
+    paddingTop: 0,
+    paddingBottom: 2
   },
   title: {
-    marginTop: 25,
-    marginBottom: 35,
+    marginTop: 15,
+    marginBottom: 15,
     fontSize: 28,
     fontWeight: 700,
     textAlign: "center"

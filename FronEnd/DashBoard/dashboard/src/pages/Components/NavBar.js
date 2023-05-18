@@ -12,8 +12,11 @@ import {
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../../styles/NavBar.module.css'; 
+import logo from '../../../public/Logos_UAM-09.png';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const NavBar = () => {
+const NavBar = ({ active }) => {
   const [eventosDropdownOpen, setEventosDropdownOpen] = useState(false);
   const [webinarsDropdownOpen, setWebinarsDropdownOpen] = useState(false);
 
@@ -21,28 +24,54 @@ const NavBar = () => {
   const toggleWebinarsDropdown = () => setWebinarsDropdownOpen(!webinarsDropdownOpen);
 
   return (
-    <Navbar className={styles.navbar} light expand="md"> {/* Aplica la clase personalizada */}
-      <NavbarBrand href="../">Página principal</NavbarBrand>
+    <Navbar className={styles.navbar} light expand="md">
+        <Link href={'/'}>
+          <Image src={logo} alt="Logo" width={95} height={60} />
+        </Link>
       <Nav className="mr-auto" navbar>
         <NavItem>
           <Dropdown isOpen={eventosDropdownOpen} toggle={toggleEventosDropdown}>
-            <DropdownToggle className={styles['nav-link']} nav caret> {/* Aplica la clase personalizada */}
+            <DropdownToggle 
+              className={`${styles['nav-link']} ${active === 'eventos' ? styles['active'] : ''}`}
+              nav 
+              caret
+            >
               Eventos
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem href="../createEvent">Creación</DropdownItem>
-              <DropdownItem href="../events">Visualización</DropdownItem>
+                <Link href={'/createEvent'} className={styles['dropdown-item']}>
+              <DropdownItem>
+                  Creación
+              </DropdownItem>
+                </Link>
+                <Link href={'/events'} className={styles['dropdown-item']}>
+              <DropdownItem>
+                  Visualización
+              </DropdownItem>
+                </Link>
             </DropdownMenu>
           </Dropdown>
         </NavItem>
         <NavItem>
           <Dropdown isOpen={webinarsDropdownOpen} toggle={toggleWebinarsDropdown}>
-            <DropdownToggle className={styles['nav-link']} nav caret> {/* Aplica la clase personalizada */}
+            <DropdownToggle 
+              className={`${styles['nav-link']} ${active === 'webinars' ? styles['active'] : ''}`}
+              nav 
+              caret
+            >
               Webinars
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem href="../createWebinar">Creación</DropdownItem>
-              <DropdownItem href="../webminars">Visualización</DropdownItem>
+                <Link href={'/createWebinar'} className={styles['dropdown-item']}>
+              <DropdownItem>
+                  Creación
+              </DropdownItem>
+                </Link>
+                <Link href={'/webminars'} className={styles['dropdown-item']}>
+              <DropdownItem>
+                  Visualización
+              </DropdownItem>
+                </Link>
             </DropdownMenu>
           </Dropdown>
         </NavItem>

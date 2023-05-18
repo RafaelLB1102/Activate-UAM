@@ -5,7 +5,7 @@ import WebinarList from './Components/WebinarListComponent';
 const webminars = () => {
     return (
         <div>
-            <NavBar />
+            <NavBar active='webinars' />
             <WebinarList />
         </div>
     );

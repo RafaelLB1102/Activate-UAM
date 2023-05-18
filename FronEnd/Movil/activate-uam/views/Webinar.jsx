@@ -6,6 +6,7 @@ import { dataExample2 } from '../data/data';
 import { WebinarCard } from '../components/WebinarCard';
 import { StatusBar } from 'expo-status-bar';
 import { LoadingPage } from './LoadingPage';
+import { Footer } from '../components/Footer';
 
 export const Webinar = () => {
   const [ data, setData ] = useState([]);
@@ -15,13 +16,13 @@ export const Webinar = () => {
     setTimeout(() => {
       setData( dataExample2 );
       setLoading( false );
-    }, 3000);
+    }, 2000);
   }, [])
 
 
   if ( loading ) {
     return (
-      <LoadingPage title={'Eventos'} />
+      <LoadingPage title={'Webinars'} />
     )
   } 
 
@@ -44,6 +45,7 @@ export const Webinar = () => {
             </View>
           </ScrollView>
       </View>
+      <Footer />
     </View>
   )
 }

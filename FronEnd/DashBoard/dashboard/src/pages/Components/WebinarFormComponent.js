@@ -168,7 +168,7 @@ const WebinarForm = () => {
                 </button>
             </div>
             <div className={styles.buttonContainer}>
-                <button type="submit" className={styles.submitButton}>
+                <button type="submit" className={styles.submitButton} style={{ border: '1px solid #009c05' }}>
                     Crear Webinar
                 </button>
             </div>

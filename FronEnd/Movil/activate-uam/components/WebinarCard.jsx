@@ -1,8 +1,8 @@
-import { View, Text } from 'react-native'
-import { styles } from '../theme/WebinarCard'
+import { View, Text } from 'react-native';
+import { styles } from '../theme/WebinarCard';
 
 export const WebinarCard = ({ data }) => {
-  const { title, hour, guests, link } = data
+  const { title, hour, guests, link } = data;
 
   return (
     <View style={ styles.card }>

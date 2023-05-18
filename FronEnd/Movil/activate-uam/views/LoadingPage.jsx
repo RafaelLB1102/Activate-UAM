@@ -4,6 +4,7 @@ import { Navbar } from '../components/Navbar';
 import { StatusBar } from 'expo-status-bar';
 import LottieView from 'lottie-react-native';
 import { useEffect, useRef } from 'react';
+import { Footer } from '../components/Footer';
 
 export const LoadingPage = ({ title }) => {
   const animationProgress = useRef(new Animated.Value(0))
@@ -32,6 +33,7 @@ export const LoadingPage = ({ title }) => {
           progress={animationProgress.current}
         />
       </View>
+      <Footer />
     </View>
   )
 }

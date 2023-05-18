@@ -1,0 +1,49 @@
+.height {
+  height: calc(100vh - 60px);
+}
+
+.card { 
+  height: max-content;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(45, 45, 45, 0.253);
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.142);
+  border-radius: 10px;
+} 
+
+.buttonOut {
+  background-color: transparent;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 5px 10px;
+  margin: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  width: max-content;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonOut:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.buttonIn {
+  background-color: transparent;
+  border: 1px solid #006aa3cc;
+  color: #006aa3cc;
+  padding: 5px 10px;
+  margin: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  width: max-content;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonIn:hover {
+  background-color: #006aa3cc;
+  color: #ffffff;
+}

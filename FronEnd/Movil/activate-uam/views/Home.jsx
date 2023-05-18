@@ -1,11 +1,12 @@
-import { ScrollView, Text, View } from 'react-native';
-import { Navbar } from '../components/Navbar';
-import { styles } from '../theme/Home';
-import { EventCard } from '../components/EventCard';
 import { useEffect, useState } from 'react';
+import { ScrollView, Text, View } from 'react-native';
 import { dataExample } from '../data/data';
-import { StatusBar } from 'expo-status-bar';
 import { LoadingPage } from './LoadingPage';
+import { StatusBar } from 'expo-status-bar';
+import { Navbar } from '../components/Navbar';
+import { EventCard } from '../components/EventCard';
+import { Footer } from '../components/Footer';
+import { styles } from '../theme/Home';
 
 export const Home = () => {
   const [ data, setData ] = useState([]);
@@ -15,7 +16,7 @@ export const Home = () => {
     setTimeout(() => {
       setData( dataExample );
       setLoading( false );
-    }, 3000);
+    }, 2000);
   }, [])
 
   if ( loading ) {
@@ -43,6 +44,7 @@ export const Home = () => {
             </View>
           </ScrollView>
       </View>
+      <Footer />
     </View>
   )
 }

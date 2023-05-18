@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   card: {
     width: '100%',
     height: 115,
-    backgroundColor: 'rgb(244, 215, 59)',
+    backgroundColor: '#F4D73B',
     borderRadius: 8,
     padding: 15
   },

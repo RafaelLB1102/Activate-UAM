@@ -39,11 +39,11 @@ const WebinarList = () => {
 
     return (
         <div>
-            <h1>Webinars</h1>
+            <h1 style={{ margin: '20px 0',  textAlign: 'center' }}>Webinars</h1>
             <div className={styles.container}>
                 {webinars.map((webinar) => (
                     <div key={webinar._id} className={styles.webinarCard}>
-                        <h2>{webinar.name}</h2>
+                        <h2 style={{ textAlign: 'center', marginBottom: '25px' }}>{webinar.name}</h2>
                         <p>Fecha de presentación: {new Date(webinar.presentation_date).toLocaleDateString()}</p>
                         <p>Hora de inicio: {webinar.start_time}</p>
                         <p>Estado: {webinar.status}</p>
@@ -64,29 +64,16 @@ const WebinarList = () => {
                                 ))}
                             </ul>
                         </div>
-                        <div>
+                        <div className={styles['button-container']}> 
                             <button
                                 onClick={() => handleDelete(webinar._id)}
-                                style={{
-                                    backgroundColor: 'red',
-                                    color: 'white',
-                                    padding: '5px 10px',
-                                    borderRadius: '5px',
-                                    cursor: 'pointer',
-                                }}
+                                className={styles['delete-btn']}
                             >
                                 Eliminar
                             </button>
                             <button
                                 onClick={() => handleEdit(webinar)}
-                                style={{
-                                    backgroundColor: 'blue',
-                                    color: 'white',
-                                    padding: '5px 10px',
-                                    borderRadius: '5px',
-                                    cursor: 'pointer',
-                                    marginRight: '10px',
-                                }}
+                                className={styles['edit-btn']}
                             >
                                 Editar
                             </button>

@@ -56,30 +56,17 @@ const EventsList = () => {
           <p className={styles['event-place']}>Lugar: {event.place}</p>
           <p className={styles['event-category']}>Categoría: {event.category}</p>
           <p className={styles['event-place']}>Estado: {event.status}</p>
-          <img src={event.image_url} width="100%" />
-          <div>
+          <img src={event.image_url} width="100%" alt='evento img' />
+          <div style={{ display: 'flex', gap: '10px', marginTop: '15px'}}>
             <button
               onClick={() => handleDelete(event._id)}
-              style={{
-                backgroundColor: 'red',
-                color: 'white',
-                padding: '5px 10px',
-                borderRadius: '5px',
-                cursor: 'pointer',
-              }}
+              className={styles['delete-btn']}
             >
               Eliminar
             </button>
             <button
               onClick={() => handleEdit(event)}
-              style={{
-                backgroundColor: 'blue',
-                color: 'white',
-                padding: '5px 10px',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                marginRight: '10px',
-              }}
+              className={styles['edit-btn']}
             >
               Editar
             </button>

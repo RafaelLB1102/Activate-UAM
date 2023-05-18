@@ -1,1 +1,16 @@
+/* el button que tenga la clase dropdown-item, cambiar color del focus o click a gris */
 
+button.dropdown-item:hover,
+button.dropdown-item a:hover {
+  text-decoration: none !important;
+  color: #000000 !important;
+  background-color: #d2d2d2 !important;
+}
+
+
+button.dropdown-item:focus,
+button.dropdown-item a:focus {
+  text-decoration: none !important;
+  color: #000000 !important;
+  background-color: #d2d2d2 !important;
+}

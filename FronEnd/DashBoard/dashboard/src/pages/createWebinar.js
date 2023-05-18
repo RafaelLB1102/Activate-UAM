@@ -5,8 +5,8 @@ import NavBar from './Components/NavBar';
 const createWebinar = () => {
     return (
         <div>
-            <NavBar />
-            <h1>Creación de Webinars</h1>
+            <NavBar title='Creación de Webinars' active='webinars' />
+            <h1 style={{ margin: '20px 0',  textAlign: 'center' }}>Creación de Webinars</h1>
             <WebinarForm />
         </div>
     )

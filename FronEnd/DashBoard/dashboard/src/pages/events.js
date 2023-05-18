@@ -4,8 +4,8 @@ import NavBar from './Components/NavBar';
 
 const EventsPage = () => (
   <div>
-    <NavBar/>
-    <h1>Eventos</h1>
+    <NavBar title='Eventos' active='eventos' />
+    <h1 style={{ textAlign: 'center', marginTop: '25px'}} >Eventos</h1>
     <EventsList/>
   </div>
 );
