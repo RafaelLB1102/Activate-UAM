@@ -1,12 +1,53 @@
 .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .webinarCard {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid hsla(0, 0%, 25%, 0.242);
     border-radius: 10px;
     padding: 20px;
+    max-height: max-content;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+    border: 1px solid #fc2929;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fc2929;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: #fcdfdf;
+}
+
+.edit-btn {
+    border: 1px solid #ff9d00;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ff9d00;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.edit-btn:hover {
+    background-color: #f7f2e9;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    gap: 20px;
+    margin-top: 20px;
 }
