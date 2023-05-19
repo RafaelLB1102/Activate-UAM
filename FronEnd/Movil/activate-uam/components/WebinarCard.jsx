@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import { styles } from '../theme/WebinarCard';
 
 export const WebinarCard = ({ data }) => {
@@ -9,7 +9,12 @@ export const WebinarCard = ({ data }) => {
       <Text style={ styles.title }>{ title }</Text>
       <Text style={ styles.subtitle }>Hora: { hour }</Text>
       <Text style={ styles.subtitle }>Invitados: { guests.join(', ') }</Text>
-      <Text style={ styles.link }>{ link }</Text>
+      <Text 
+        style={ styles.link }
+        onPress={ () => Linking.openURL(link) }
+      >
+        { link }
+      </Text>
     </View>
   )
 }
