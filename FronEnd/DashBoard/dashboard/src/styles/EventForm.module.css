@@ -63,3 +63,13 @@
     background-color: #c7ddfd;
 }
 
+.submit-button:disabled {
+    background-color: #e7f0fd;
+    border-color: #e7f0fd;
+    color: #0d6efd;
+    cursor: not-allowed;
+}
+
+.submit-button:disabled:hover {
+    font-weight: normal;
+}

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../../styles/EventForm.module.css';
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn, signOut } from "next-auth/react";
+import { storage, uploadImage } from '../../utils/firebase';
 
 const EventForm = () => {
 
@@ -18,14 +19,14 @@ const EventForm = () => {
         image_url: '',
     });
 
+    const [imageUrl, setImageUrl] = useState(null);
 
 
-    const handleFileChange = (e) => {
+
+    const handleFileChange = async (e) => {
         const file = e.target.files[0];
-        console.log(file);
-        if (file) {
-            setEventData({ ...eventData, image_url: `public/${file.name}` });
-        }
+        const url = await uploadImage(file);
+        setImageUrl(url);
     };
 
     const handleChange = (e) => {
@@ -39,6 +40,7 @@ const EventForm = () => {
         e.preventDefault();
 
         try {
+            eventData.image_url = imageUrl;
             await axios.post('http://localhost:9000/api/v1/events/event', eventData);
             alert('Evento creado exitosamente');
             setEventData({
@@ -186,7 +188,12 @@ const EventForm = () => {
                     </div>
                 </div>
             </div>
-            <button type="submit" className={styles['submit-button']} href="./events">
+            <button 
+                type="submit" 
+                className={styles['submit-button']} 
+                href="./events" 
+                disabled={!imageUrl}
+            >
                 Crear evento
             </button>
         </form>

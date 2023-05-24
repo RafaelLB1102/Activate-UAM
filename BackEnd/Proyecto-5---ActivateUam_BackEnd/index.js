@@ -14,7 +14,7 @@ APP.listen(process.env.CONNECTION_PORT, () => {
 
 MONGOOSE.set("strictQuery", false);
 
-MONGOOSE.connect(process.env.DATABASE_CONNECTION_STRING, { family: 4 })
+MONGOOSE.connect(process.env.DATABASE_CONNECTION_STRING)
   .then(() => console.log("successful conection"))
   .catch((err) => console.log(err));
 
