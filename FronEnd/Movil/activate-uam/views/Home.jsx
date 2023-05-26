@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import { dataExample } from '../data/data';
+import { convertDate, dataExample } from '../data/data';
 import { LoadingPage } from './LoadingPage';
 import { StatusBar } from 'expo-status-bar';
 import { Navbar } from '../components/Navbar';
@@ -14,6 +14,10 @@ export const Home = () => {
 
   useEffect(() => {
     setTimeout(() => {
+      dataExample.map(( item ) => {
+        item.date = convertDate( item.date );
+      })
+
       setData( dataExample );
       setLoading( false );
     }, 2000);
