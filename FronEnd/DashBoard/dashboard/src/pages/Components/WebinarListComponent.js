@@ -43,26 +43,28 @@ const WebinarList = () => {
             <div className={styles.container}>
                 {webinars.map((webinar) => (
                     <div key={webinar._id} className={styles.webinarCard}>
-                        <h2 style={{ textAlign: 'center', marginBottom: '25px' }}>{webinar.name}</h2>
-                        <p>Fecha de presentación: {new Date(webinar.presentation_date).toLocaleDateString()}</p>
-                        <p>Hora de inicio: {webinar.start_time}</p>
-                        <p>Estado: {webinar.status}</p>
-                        <p>URL: {webinar.url}</p>
-                        <div>
-                            <h3>Ponentes</h3>
-                            <ul>
-                                {webinar.speakers.map((speaker, index) => (
-                                    <li key={index}>
-                                        <p>Nombre: {speaker.name}</p>
-                                        <p>Áreas de especialización:</p>
-                                        <ul>
-                                            {speaker.majors.map((major, majorIndex) => (
-                                                <li key={majorIndex}>{major}</li>
-                                            ))}
-                                        </ul>
-                                    </li>
-                                ))}
-                            </ul>
+                        <div className={styles['text-container']}>
+                            <h2 style={{ textAlign: 'center', marginBottom: '25px' }}>{webinar.name}</h2>
+                            <p>Fecha de presentación: {new Date(webinar.presentation_date).toLocaleDateString()}</p>
+                            <p>Hora de inicio: {webinar.start_time}</p>
+                            <p>Estado: {webinar.status}</p>
+                            <p>URL: {webinar.url}</p>
+                            <div>
+                                <h3>Ponentes</h3>
+                                <ul>
+                                    {webinar.speakers.map((speaker, index) => (
+                                        <li key={index}>
+                                            <p>Nombre: {speaker.name}</p>
+                                            <p>Áreas de especialización:</p>
+                                            <ul>
+                                                {speaker.majors.map((major, majorIndex) => (
+                                                    <li key={majorIndex}>{major}</li>
+                                                ))}
+                                            </ul>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                         <div className={styles['button-container']}> 
                             <button

@@ -51,3 +51,39 @@
     gap: 20px;
     margin-top: 20px;
 }
+
+.text-container {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.text-container::-webkit-scrollbar {
+    width: 7px;
+}
+.text-container::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+.text-container::-webkit-scrollbar-track:hover {
+    background-color: transparent;
+}
+
+.text-container::-webkit-scrollbar-track:active {
+    background-color: transparent;
+}
+
+.text-container::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #2d2d2d4b;
+}
+
+.text-container::-webkit-scrollbar-thumb:hover {
+    background-color: #2d2d2d71;
+}
+
+.text-container::-webkit-scrollbar-thumb:active {
+    background-color: #2d2d2d71;
+}
+  
