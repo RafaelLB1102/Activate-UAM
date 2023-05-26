@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { View, Text, ScrollView } from 'react-native'
 import { Navbar } from '../components/Navbar';
 import { styles } from '../theme/Webinar';
-import { dataExample2 } from '../data/data';
 import { WebinarCard } from '../components/WebinarCard';
 import { StatusBar } from 'expo-status-bar';
 import { LoadingPage } from './LoadingPage';
 import { Footer } from '../components/Footer';
+import axios from 'axios';
 
 export const Webinar = () => {
   const [ data, setData ] = useState([]);
@@ -14,10 +14,20 @@ export const Webinar = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setData( dataExample2 );
-      setLoading( false );
+      getData();
     }, 2000);
   }, [])
+
+  const getData = async () => {
+    try {
+      const { data } = await axios.get('http://192.168.130.220:9000/api/v1/webminars/all');
+
+      setData( data );
+      setLoading( false );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 
   if ( loading ) {

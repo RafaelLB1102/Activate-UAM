@@ -1,41 +1,6 @@
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 
-export const dataExample = [
-  {
-    id: 1,
-    title: "Taller de React Native",
-    category: "Taller",
-    date: "5/6/2023",
-    place: "F-404",
-    hour: "4pm - 6pm"
-  },
-  {
-    id: 2,
-    title: "Alfarería",
-    category: "Manualidades",
-    date: "5/6/2023",
-    place: "Parque estudiantil",
-    hour: "10am - 12pm"
-  },
-  {
-    id: 1,
-    title: "Taller de React Native",
-    category: "Taller",
-    date: "5/6/2023",
-    place: "F-404",
-    hour: "4pm - 6pm"
-  },
-  {
-    id: 2,
-    title: "Alfarería",
-    category: "Manualidades",
-    date: "5/6/2023",
-    place: "Parque estudiantil",
-    hour: "10am - 12pm"
-  },
-]
-
 export const dataExample2 = [
   {
     id: 1,
@@ -121,10 +86,7 @@ export const dataExample2 = [
 ]
 
 export const convertDate = (date) => {
-  /* format(new Date(date), 'EEEE, dd "de" LLLL', { locale: es }) */
-  const partesFecha = date.split('/');
-  const fechaFormateada = partesFecha[2] + '-' + partesFecha[0] + '-' + partesFecha[1];
-  const fechaObjeto = new Date(fechaFormateada);
+  const fechaObjeto = new Date(date);
   const fechaFinal = format(fechaObjeto, "EEEE, dd 'de' LLLL", { locale: es });
   return fechaFinal;
 }

@@ -1,9 +1,9 @@
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { styles } from '../theme/EventCard';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export const EventCard = ({ data }) => {
-  const { title, category, date, place, hour } = data;
+  const { name, category, event_date, place, start_time, end_time, image_url } = data;
 
   return (
     /* left to righ */
@@ -13,18 +13,30 @@ export const EventCard = ({ data }) => {
       end={{ x: 1, y: 1 }}
       style={ styles.card }
     >
-      <Text style={ styles.title }>{ title }</Text>
+      <Text style={ styles.title }>{ name }</Text>
       <Text style={ styles.subtitle }>Categoría: { category }</Text>
-      <Text style={ styles.subtitle }>Fecha: { date }</Text>
+      <Text style={ styles.subtitle }>Fecha: { event_date }</Text>
       <Text style={ styles.subtitle }>Lugar: { place }</Text>
-      <Text style={ styles.subtitle }>Hora: { hour }</Text>
+      <Text style={ styles.subtitle }>Hora: { start_time } - { end_time }</Text>
 
-      {/* Simular imagen */}
-      <View style={ styles.containerImg }>
-        <View style={ styles.image }>
-          <Text>Imagen</Text>
-        </View>
-      </View>
+      {
+        image_url === ''
+        ? (
+          <View style={ styles.containerImg }>
+            <View style={ styles.image }>
+              <Text>Imagen</Text>
+            </View>
+          </View>
+        )
+        : (
+          <View style={ styles.containerImg }>
+            <Image
+              source={{ uri: image_url }}
+              style={ styles.imageUrl }
+            />
+          </View>
+        )
+      }
     </LinearGradient>
   )
 }

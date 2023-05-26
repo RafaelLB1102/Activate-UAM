@@ -31,5 +31,12 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'gray',
+  },
+  imageUrl: {
+    width: '100%',
+    height: 240,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
