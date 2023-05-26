@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../../styles/EventForm.module.css';
+import { uploadImage } from '@/utils/firebase';
 
 const EditForm = ({ editingEvent, setIsEditing, onClose }) => {
     const [eventData, setEventData] = useState(editingEvent);
+    const [image, setImage] = useState(null);
 
-    const handleFileChange = (e) => {
+    const handleFileChange = async (e) => {
         const file = e.target.files[0];
-        console.log(file);
-        if (file) {
-            setEventData({ ...eventData, image_url: `public/${file.name}` });
-        }
+        const url = await uploadImage(file);
+        setEventData({ ...eventData, image_url: url });
+        setImage(url);
     };
 
     const handleChange = (e) => {
@@ -173,7 +174,7 @@ const EditForm = ({ editingEvent, setIsEditing, onClose }) => {
             </div>
             
             <div>
-                <button type="submit" className={styles['submit-button']} href="./events">
+                <button type="submit" className={styles['submit-button']} href="./events" disabled={!image}>
                     Editar evento
                 </button>
                 <button type="submit" 
